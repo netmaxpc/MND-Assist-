@@ -62,25 +62,26 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    // Test the bot configuration by making a simple API call
+    // Test the bot configuration by making a simple API call to OpenAI
+    // Here, the provided appId is treated as the OpenAI model name
     let testSuccess = true
     try {
-      const testResponse = await fetch('https://apps.abacus.ai/v1/chat/completions', {
+      const testResponse = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${process.env.ABACUSAI_API_KEY}`,
-          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'gpt-4.1-mini',
+          model: appId.trim(),
           messages: [
             {
               role: 'user',
               content: 'Hello, this is a test message.'
             }
           ],
-          max_tokens: 10,
-        }),
+          max_tokens: 10
+        })
       })
 
       if (!testResponse.ok) {

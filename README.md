@@ -4,18 +4,19 @@ A professional AI Assistant application with screen sharing, voice chat, and tex
 
 ## Features
 
-- **Dual Bot System**: Clay and Reese chatbots with configurable App IDs
+- **Dual Bot System**: Clay and Reese chatbots with configurable model IDs
 - **Voice Chat**: Real-time voice interaction with speech-to-text and text-to-speech
 - **Screen Sharing**: Share your screen and get AI assistance with visual content
 - **Text Chat**: Traditional text-based conversation interface
 - **Modern UI**: Dark theme with professional design using Tailwind CSS and shadcn/ui
+- **Persistent Storage**: Save and retrieve statements and documentation
 
 ## Technology Stack
 
 - **Frontend**: Next.js 14, React, TypeScript
 - **UI Components**: shadcn/ui, Radix UI, Tailwind CSS
-- **Database**: Prisma ORM with SQLite
-- **AI Integration**: Abacus.AI API
+- **Database**: Prisma ORM with SQLite for bot configuration and statement storage
+- **AI Integration**: OpenAI GPT models
 - **Voice**: Web Speech API
 - **Screen Sharing**: WebRTC Screen Capture API
 
@@ -25,11 +26,11 @@ A professional AI Assistant application with screen sharing, voice chat, and tex
 2. Install dependencies: `npm install`
 3. Set up environment variables
 4. Run the development server: `npm run dev`
-5. Configure your Clay and Reese App IDs in the settings
+5. Configure your Clay and Reese model IDs in the settings
 
 ## Configuration
 
-The application requires Abacus.AI App IDs for Clay and Reese chatbots. Configure these through the settings modal in the application.
+The application uses OpenAI models for Clay and Reese chatbots. Configure their model IDs through the settings modal in the application.
 
 ## Project Structure
 
