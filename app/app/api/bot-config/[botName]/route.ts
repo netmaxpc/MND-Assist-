@@ -40,7 +40,7 @@ export async function GET(
 
     return NextResponse.json({
       botName,
-      appId: botConfig.appId,
+      appId: botConfig.appId, // OpenAI model id
       isActive: botConfig.isActive
     })
 
